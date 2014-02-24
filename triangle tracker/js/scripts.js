@@ -1,9 +1,11 @@
 var Triangle = {
   isValid: function() {
     var result = "";
-      if ((this.side3 >= this.side1 + this.side2) || 
+      if (
+        (this.side1 >= this.side2 + this.side3) || 
         (this.side2 >= this.side1 + this.side3) ||
-        (this.side3 >= this.side1 + this.side2)) {
+        (this.side3 >= this.side1 + this.side2)
+        ) {
         return false;
       } else {
         return true;
@@ -31,6 +33,14 @@ $(document).ready(function() {
     newTriangle.side1 = inputtedSide1;
     newTriangle.side2 = inputtedSide2;
     newTriangle.side3 = inputtedSide3;
-
+    
+    $("h2").show();
+    if (newTriangle.isValid() === false) {
+      console.log('GOT THIS FAR');
+      $("#not-triangle").show();
+    } else {
+      $("#type").show().text(newTriangle.type());
+    }
+    this.reset();
   });
 });
