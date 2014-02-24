@@ -1,0 +1,14 @@
+#show-contact {
+  display: none;
+  background-color: lightblue;
+  margin: 10px;
+}
+
+.contact {
+  cursor: pointer;
+  color: #0088CC;
+}
+
+.contact:hover {
+  text-decoration: underline;
+}
