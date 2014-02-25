@@ -36,7 +36,6 @@ $(document).ready(function() {
     
     $("h2").show();
     if (newTriangle.isValid() === false) {
-      console.log('GOT THIS FAR');
       $("#not-triangle").show();
     } else {
       $("#type").show().text(newTriangle.type());
