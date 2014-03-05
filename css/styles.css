@@ -1,0 +1,24 @@
+table {
+  border: 1px solid black;
+  text-align: center;
+  margin: auto;
+}
+
+td {
+  height: 15px;
+  width: 15px;
+  border: 1px solid black;
+}
+
+.black {
+  background-color: black;
+}
+
+.white {
+  background-color: white;
+}
+
+#main {
+  text-align: center;
+  margin: auto;
+}
