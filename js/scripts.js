@@ -116,21 +116,26 @@ $(document).ready(function() {
   });
 
   $('button#run-button').click(function() {
-    setInterval(function(){
+    setInterval(function() {
       World.population.forEach(function(cell) {
         cell.setFutureState();
       });
 
       World.population.forEach(function(cell) {
-        if (cell.state === true) {
+        
+        if (cell.futureState === true) {
           $("td#"+cell.cellId).addClass('black');
           $("td#"+cell.cellId).removeClass('white');
-        } else {
+          cell.state = true;
+        } else if (cell.futureState === false) {
           $("td#"+cell.cellId).removeClass('black');
           $("td#"+cell.cellId).addClass('white');
-        }
+          cell.state = false;
+        } 
+        //cell.makeDeadorAlive();
       });
-    }, 50);
+      console.log('cycle')
+    }, 100);
 
 
   });
